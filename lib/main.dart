@@ -33,11 +33,25 @@ class _FindRestaurantState extends State<FindRestaurant> {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 17.0),
             child: Text(
-              "Can't decide which restaurant to go to?",
+              "Can't decide which restaurant to go to? Click on this Pizza below to find out!",
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 25.0,
               ),
+            ),
+          ),
+          FlatButton(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onPressed: () {
+              setState(() {
+                num = Random().nextInt(6) + 1;
+              });
+            },
+            child: Image.asset(
+              "images/image$num.png",
+              width: 300.0,
+              height: 300.0,
             ),
           ),
           Container(
@@ -55,20 +69,6 @@ class _FindRestaurantState extends State<FindRestaurant> {
                   color: Colors.white,
                 ),
               ),
-            ),
-          ),
-          FlatButton(
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onPressed: () {
-              setState(() {
-                num = Random().nextInt(6) + 1;
-              });
-            },
-            child: Image.asset(
-              "images/image$num.png",
-              width: 300.0,
-              height: 300.0,
             ),
           ),
         ],
